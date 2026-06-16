@@ -1,0 +1,85 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id              Int               @id @default(autoincrement())
+  nik             String            @unique
+  password        String
+  nama            String
+  noHp            String?
+  provinsi        String?
+  kabupaten       String?
+  kecamatan       String?
+  desa            String?
+  dusun           String?
+  rw              String?
+  rt              String?
+  role            String            @default("WARGA")
+  statusAkun      String            @default("PENDING")
+  createdAt       DateTime          @default(now())
+  alamat          String?
+  noKk            String?
+  dukuhId         Int?
+  aduans          Aduan[]
+  anggotaKeluarga AnggotaKeluarga[]
+  surats          Surat[]
+  informasis      Informasi[]
+}
+
+model Aduan {
+  id        Int      @id @default(autoincrement())
+  judul     String
+  deskripsi String
+  status    String   @default("PENDING")
+  userId    Int
+  createdAt DateTime @default(now())
+  user      User     @relation(fields: [userId], references: [id])
+}
+
+model Surat {
+  id          Int      @id @default(autoincrement())
+  jenis_surat String
+  status      String   @default("PENDING")
+  userId      Int
+  createdAt   DateTime @default(now())
+  user        User     @relation(fields: [userId], references: [id])
+}
+
+model Informasi {
+  id        Int      @id @default(autoincrement())
+  judul     String
+  konten    String
+  penulis   String   @default("DUKUH")
+  tipe      String   @default("UMUM")
+  pembuatId Int?
+  pembuat   User?    @relation(fields: [pembuatId], references: [id])
+  createdAt DateTime @default(now())
+}
+
+model AnggotaKeluarga {
+  id               Int     @id @default(autoincrement())
+  nik              String
+  nama             String
+  hubungan         String
+  userId           Int
+  agama            String?
+  golonganDarah    String?
+  jenisKelamin     String?
+  jenisPekerjaan   String?
+  kewarganegaraan  String?
+  namaAyah         String?
+  namaIbu          String?
+  noPaspor         String?
+  pendidikan       String?
+  statusPerkawinan String?
+  tanggalKawin     String?
+  tanggalLahir     String?
+  tempatLahir      String?
+  user             User    @relation(fields: [userId], references: [id])
+}
