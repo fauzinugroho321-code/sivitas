@@ -34,7 +34,7 @@ export default async function Home() {
       </header>
 
       <main className="flex-1">
-        {/* HERO SECTION ELEGAN */}
+        {/* HERO SECTION  */}
         <section className="w-full max-w-7xl mx-auto px-4 pt-8 pb-12">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 h-auto lg:h-[600px]">
 
@@ -48,7 +48,7 @@ export default async function Home() {
                   className="object-cover transition-transform duration-700 group-hover:scale-105"
                   priority
                 />
-              {/* Gradient Overlay agar teks terbaca */}
+              { }
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
 
               {/* Teks Melayang di Atas Gambar */}

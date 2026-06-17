@@ -11,7 +11,7 @@ export default async function BeritaPage({
 }: {
   searchParams: Promise<{ q?: string }>;
 }) {
-  // Di Next.js 15, searchParams harus di-await sebelum digunakan
+  
   const resolvedParams = await searchParams;
   const searchQuery = resolvedParams?.q || '';
 
@@ -20,7 +20,7 @@ export default async function BeritaPage({
     where: {
       tipe: 'UMUM',
       ...(searchQuery
-        ? { judul: { contains: searchQuery, mode: 'insensitive' } }
+        ? { judul: { contains: searchQuery } }
         : {}),
     },
     orderBy: { createdAt: 'desc' },

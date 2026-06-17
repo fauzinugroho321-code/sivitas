@@ -48,7 +48,7 @@ export async function updateNama(formData: FormData) {
   if (noKk !== "") updateData.noKk = noKk;
   if (alamat !== "") updateData.alamat = alamat;
 
-  await prisma.user.update({ where: { id }, data: updateData });
+  await prisma.user.update({ where: { id: id as number }, data: updateData });
 
   revalidatePath("/dashboard/profil");
   redirect("/dashboard/profil");
