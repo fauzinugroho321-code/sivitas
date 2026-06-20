@@ -28,6 +28,10 @@ SIVITAS adalah aplikasi web modern yang membantu mendigitalisasi layanan adminis
 **Database:** PostgreSQL / MySQL (Via Prisma)
 **Tools:** ESLint, TypeScript, Lucide Icons
 
+## AKUN TEST
+ROLE DUKUH = 3201011990000001 | dukuh12026
+ROLE WARGA = 3201011990000012 | warga92026
+
 ## 📖 Latar Belakang (Background)
 
 Proyek ini berawal dari pengalaman observasi langsung di lapangan saat saya mengikuti program Kuliah Kerja Nyata (KKN) di Desa Dlingo, Kabupaten Bantul. Selama program berlangsung, saya mendengarkan langsung keluhan dari para Kepala Dukuh mengenai proses pendataan warga dan administrasi desa yang masih konvensional, memakan waktu, dan rawan ketidaksinkronan data. Berangkat dari permasalahan nyata tersebut, SIVITAS dibangun. Aplikasi ini dirancang khusus untuk mempermudah tugas perangkat desa—khususnya para Dukuh—dalam mengumpulkan, memantau, dan mengelola data kependudukan secara digital dan terpusat, sehingga pelayanan desa menjadi jauh lebih cepat, akurat, dan efisien.
